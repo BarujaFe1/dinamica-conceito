@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0b;
+  --foreground: #f4f2ed;
+  --accent: #bef264;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgba(190, 242, 100, 0.85);
+  color: #0a0a0b;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Faixa de luz de inspeção — apenas CSS, sem WebGL */
+.inspection-light {
+  background:
+    radial-gradient(
+      ellipse 90% 55% at 50% 0%,
+      rgba(244, 242, 237, 0.16),
+      transparent 65%
+    ),
+    linear-gradient(180deg, #17181a 0%, #0a0a0b 70%);
+}
+
+.hairline {
+  border-color: rgba(244, 242, 237, 0.12);
+}
